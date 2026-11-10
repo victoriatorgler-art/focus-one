@@ -1,7 +1,7 @@
 {
   "name": "Focus One",
   "short_name": "Focus",
-  "description": "Focus on one thing at a time.",
+  "description": "Know what is next. Focus on one thing. Finish what matters.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",

@@ -1,15 +1,24 @@
-# Focus One V0.1.2
+# Focus One V0.2.0
 
-Focus on one thing at a time.
+**Know what’s next. Focus on one thing. Finish what matters.**
 
-## Changes in this build
-- Screen Wake Lock is requested during a running focus session, released on pause/end/completion, and requested again on resume/return.
-- New **Complete task** button saves elapsed focus time as a completed session.
-- Completion screen adds **Start a new task**.
-- Activities can now be deleted with the × control. Deleting an activity does not erase historical sessions.
-- Service-worker cache bumped to v0.1.2.
+## New in V0.2
+- Date-prioritized task list
+- Specific due date, no due date, and evergreen tasks
+- Automatic order: overdue, today, upcoming, no due date, evergreen
+- Add, edit, delete, and manually complete tasks
+- Focus sessions attached to tasks
+- End-of-session decision: complete or pick up later
+- Continue previous task or focus on the next priority
+- Open tasks remain in the queue until completed or deleted
+- Today view shows focus time and completed tasks
+- Migrates prior activity tiles to evergreen tasks and retains compatible local history
+- Screen Wake Lock retained where supported
 
-## Publish update
-Upload these files to the root of your existing GitHub repository and replace the old versions. Commit to the branch already connected to GitHub Pages. Your existing URL stays the same.
+## Publish
+Upload all files to the root of your existing GitHub repository, replacing the prior versions. Commit to the branch connected to GitHub Pages. The URL remains unchanged.
 
-If the installed Home Screen app briefly shows the old UI, fully close it and reopen it after GitHub Pages finishes deploying.
+After deployment, fully close and reopen the Home Screen app. The service worker cache is versioned `focus-one-v020`.
+
+## Data
+All tasks and history remain in browser local storage. Clearing website data can erase them. There is no account or cloud backup in V0.2.
