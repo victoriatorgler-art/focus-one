@@ -1,52 +1,7 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <meta name="theme-color" content="#5b4fe9">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="default">
-  <meta name="apple-mobile-web-app-title" content="Focus One">
-  <link rel="manifest" href="manifest.json">
-  <link rel="apple-touch-icon" href="icons/icon-180.png">
-  <link rel="stylesheet" href="styles.css">
-  <title>Focus One</title>
-</head>
-<body>
-<main id="app">
-  <section id="focus" class="screen active">
-    <header><div class="eyebrow">FOCUS ONE</div><h1>Focus on one thing.</h1><p>Choose the one activity that deserves your attention now.</p></header>
-    <h2>What are you focusing on?</h2>
-    <div id="activities" class="grid"></div>
-    <button id="addActivity" class="ghost">+ New activity</button>
-    <h2>How long?</h2>
-    <div id="durations" class="durations"></div>
-    <div class="custom"><input id="customMinutes" type="number" min="1" max="240" inputmode="numeric" placeholder="Custom minutes"><button id="useCustom">Use</button></div>
-    <button id="start" class="primary">Start focus</button>
-    <div id="todayMini" class="mini"></div>
-  </section>
-
-  <section id="timer" class="screen">
-    <div class="timer-wrap">
-      <div id="timerActivity" class="activity-title"></div>
-      <div class="ring" style="--p:0"><div class="ring-inner"><div id="time" class="time">25:00</div><div id="statusLine">Stay with this one thing</div></div></div>
-      <div class="row"><button id="pause" class="primary small">Pause</button><button id="end" class="danger small">End</button></div>
-    </div>
-  </section>
-
-  <section id="complete" class="screen complete">
-    <div class="check">✓</div><h1>Focus complete</h1><p id="completeText"></p>
-    <button id="break" class="primary">Take a 5-minute break</button>
-    <button id="repeat" class="secondary">Repeat focus</button><button id="done" class="ghost">Done</button>
-  </section>
-
-  <section id="today" class="screen">
-    <header><div class="eyebrow">TODAY</div><h1 id="todayTotal">0m focused</h1><p id="todayCount">0 sessions</p></header>
-    <div id="sessionList" class="sessions"></div>
-    <button id="clearToday" class="ghost">Clear today's history</button>
-  </section>
-</main>
-<nav id="nav"><button data-screen="focus" class="nav-active">Focus</button><button data-screen="today">Today</button></nav>
-<div id="modal" class="modal hidden"><div class="card"><h2>New activity</h2><input id="activityName" maxlength="40" placeholder="Activity name"><div class="row"><button id="cancelAdd" class="secondary">Cancel</button><button id="saveAdd" class="primary">Add</button></div></div></div>
-<script src="app.js"></script>
-</body></html>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#6257e6"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Focus One"><link rel="manifest" href="manifest.json"><link rel="apple-touch-icon" href="icons/icon-180.png"><link rel="stylesheet" href="styles.css"><title>Focus One</title></head><body><main>
+<section id="focus" class="screen active"><p class="brand">FOCUS ONE</p><h1>Focus on one thing.</h1><p class="lede">Choose the one activity that deserves your attention now.</p><div class="section-title">WHAT ARE YOU FOCUSING ON?</div><div id="activities" class="activities"></div><button id="add" class="quiet">+ New activity</button><div class="section-title">HOW LONG?</div><div id="durations" class="durations"></div><div class="custom"><input id="custom" type="number" inputmode="numeric" min="1" max="240" placeholder="Custom minutes"><button id="useCustom">Use</button></div><button id="start" class="primary">Start focus</button><p id="mini" class="center muted"></p></section>
+<section id="timer" class="screen timer-screen"><h2 id="timerActivity"></h2><div id="ring" class="ring" style="--remain:1"><div class="ring-core"><div id="clock">25:00</div><span id="timerMessage">Stay with this one thing</span></div></div><button id="complete" class="primary">Complete task</button><div class="two"><button id="pause" class="secondary">Pause</button><button id="end" class="danger">End</button></div><p id="wake" class="center muted small">Keeping screen awake while focusing</p></section>
+<section id="finished" class="screen finished"><div class="check">✓</div><h1>Task complete</h1><p id="finishText" class="lede"></p><button id="newTask" class="primary">Start a new task</button><button id="break" class="secondary full">Take a 5-minute break</button><button id="repeat" class="secondary full">Repeat focus</button><button id="done" class="quiet">Done</button></section>
+<section id="today" class="screen"><p class="brand">TODAY</p><h1 id="total">0m focused</h1><p id="count" class="lede">0 sessions</p><div id="history"></div></section>
+</main><nav id="nav"><button data-go="focus" class="selected">Focus</button><button data-go="today">Today</button></nav>
+<div id="modal" class="modal hidden"><div class="dialog"><h2>New activity</h2><input id="newName" maxlength="40" placeholder="Activity name"><div class="two"><button id="cancel" class="secondary">Cancel</button><button id="save" class="primary">Add</button></div></div></div><script src="app.js"></script></body></html>
